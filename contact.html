@@ -8,6 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Oladimeji Marvellous</title>
     <style>
+        body {
+            overflow: scroll;
+        }
+
         a {
             text-decoration: none;
             color: white;
@@ -54,13 +58,23 @@
             nav ul {
                 display: none;
                 flex-direction: column;
-                align-items: center;
-                padding: 0;
+                /* align-items: center; */
                 gap: 15px;
+                height: 90vh;
+                width: 100%;
+                font-size: 25px;
+                margin-top: 30px;
+                position: absolute;
+                background: black;
+                top: 75px;
             }
 
             nav ul li {
-                margin: 10px 0;
+                border: 0.5px #ececec solid;
+                border-radius: 10px;
+                padding: 15px;
+                margin-left: 30px;
+                margin-right: 30px;
             }
 
             nav .hamburger {
@@ -93,12 +107,7 @@
         @media screen and (max-width: 480px) {
             nav ul {
                 flex-direction: column;
-                align-items: center;
                 padding: 0;
-            }
-
-            nav ul li {
-                margin: 10px 0;
             }
 
             footer {
@@ -110,7 +119,7 @@
 <body style="background-color: black; color: white; margin: 0; font-family: 'Montserrat';">
     <nav style="display: flex; align-items: center; justify-content: space-between;">
         <div style="display: flex; justify-content: space-between; align-items: center; gap: 130px;">
-            <h1 style="font-size: 25px; font-family: 'Montserrat';">Marvellous</h1>
+            <h1 style="font-size: 30px; font-family: 'Montserrat';">Marvellous</h1>
             <div class="hamburger" onclick="toggleMenu()">
                 <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 7L7 7M20 7L11 7" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> <path d="M20 17H17M4 17L13 17" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> <path d="M4 12H7L20 12" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
             </div>
@@ -162,7 +171,9 @@
     <script>
         function toggleMenu() {
             const menu = document.getElementById('nav-links');
+            const body = document.body;
             menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+            body.style.overflow = (body.style.overflow === 'hidden') ? 'scroll' : 'hidden'
         }
 
         // Select the canvas element where we will render the scene

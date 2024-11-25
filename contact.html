@@ -13,22 +13,118 @@
             color: white;
             font-family: 'Montserrat';
         }
-        
+
+        ul {
+            display: flex;
+            list-style-type: none;
+            gap: 50px;
+        }
+
+        nav {
+            margin: 35px;
+        }
+
+        .hamburger {
+            display: none;
+        }
+
+        img {
+            width: 500px;
+            height: auto;
+        }
+
+        /* Mobile Responsive Styles */
+        @media screen and (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+                margin: 15px;
+            }
+
+            section {
+                width: 100%;
+                padding: 20px;
+                margin: 0;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                padding: 0;
+                gap: 15px;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            nav .hamburger {
+                display: block;
+                cursor: pointer;
+                font-size: 30px;
+            }
+
+            nav .hamburger div {
+                width: 30px;
+                height: 4px;
+                background-color: white;
+                margin: 6px 0;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            img {
+                width: 300px;
+                height: auto;
+            }
+
+            .contact {
+                flex-direction: column;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                padding: 0;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            footer {
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 <body style="background-color: black; color: white; margin: 0; font-family: 'Montserrat';">
-    <nav style="display: flex; align-items: center; justify-content: space-between; margin: 35px;">
-        <h1 style="font-size: 25px;">Marvellous</h1>
-        <ul style="list-style-type: none; display: flex;gap: 50px;">
-            <li><a href="port.html">Home</a></li>
-            <li><a href="port.html#about">About</a></li>
-            <li>Resume</li>
+    <nav style="display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 130px;">
+            <h1 style="font-size: 25px; font-family: 'Montserrat';">Marvellous</h1>
+            <div class="hamburger" onclick="toggleMenu()">
+                <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 7L7 7M20 7L11 7" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> <path d="M20 17H17M4 17L13 17" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> <path d="M4 12H7L20 12" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+            </div>
+        </div>
+        <ul id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a target="_blank" href="https://drive.google.com/file/d/1Lr0zzC3XsXMxTwkugNfOgbAH01LYOmYW/view?usp=sharing">Resume</a></li>
             <li><a href="project.html">Project</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
     <h1 style="text-align: center;">CONTACT</h1>
-    <section style="display: flex; max-width: 70%; margin: auto; justify-content: space-between;">
+    <section class="contact" style="display: flex; max-width: 70%; margin: auto; justify-content: space-between;">
         <div style="max-width: 400px; font-size: 20px;">
             <p>Whether you're looking to build a cutting-edge web application or seeking a dedicated developer to join your team, I'm excited to connect and explore how we can work together.</p>
             <h3>Socials</h3>
@@ -57,8 +153,18 @@
         <canvas id="sphere-canvas" style="width: 800px; height: 800px;" width="300" height="300"></canvas>
     </section>
 
+    <footer style="margin-top: 20px; margin-bottom: 20px; font-family: 'Montserrat'; text-align: center; position: absolute; bottom: 0; width: 100%;">
+        <hr style="margin-bottom: 20px;">
+        &copy; 2024 | ❤️ Oladimeji Marvellous
+    </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
+        function toggleMenu() {
+            const menu = document.getElementById('nav-links');
+            menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+        }
+
         // Select the canvas element where we will render the scene
         const canvas = document.getElementById('sphere-canvas');
 

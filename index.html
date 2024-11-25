@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            font-family: 'Montserrat';
+        }
+        .typetext {
+            color: #fff;
+            font-family: monospace;
+            overflow: hidden;
+            border-right: .15em solid orange;
+            white-space: nowrap;
+            letter-spacing: .15em;
+            animation: 
+                typing 2.5s steps(30, end),
+                blink-caret .5s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 50% }
+        }
+
+        @keyframes progress {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes progress-css {
+            from { width: 0 }
+            to { width: 90% }
+        }
+
+        @keyframes progress-java {
+            from { width: 0 }
+            to { width: 60% }
+        }
+
+        @keyframes progress-react {
+            from { width: 0 }
+            to { width: 50% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange }
+        }
+
+        .montserrat-new {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background-color: lightgreen;
+            animation: progress 4.5s;
+        }
+
+        .css-bar {
+            width: 90%;
+            height: 10px;
+            background-color: lightgreen;
+            animation: progress-css 3.5s;
+        }
+
+        .java-bar {
+            width: 60%;
+            height: 10px;
+            background-color: lightgreen;
+            animation: progress-java 3.5s;
+        }
+
+        .react-bar {
+            width: 50%;
+            height: 10px;
+            background-color: lightgreen;
+            animation: progress-react 3.5s;
+        }
+
+        .hamburger {
+            display: none;
+        }
+
+        ul {
+            display: flex;
+            list-style-type: none;
+            gap: 50px;
+        }
+
+        nav {
+            margin: 35px;
+        }
+
+        .name {
+            max-width: 85%;
+            margin-left: 70px;
+            margin-top: 100px;
+        }
+
+        .skill1 > div > div {
+            width: 400px;
+        }
+
+        #about {
+            max-width: 70%;
+        }
+
+        /* Mobile Responsive Styles */
+        @media screen and (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+                margin: 15px;
+            }
+
+            .typetext {
+                font-size: 25px;
+            }
+
+            .progress-bar, .css-bar, .java-bar, .react-bar {
+                width: 100%;
+            }
+
+            section {
+                width: 100%;
+                padding: 20px;
+                margin: 0;
+            }
+
+            .typetext {
+                font-size: 30px;
+            }
+
+            #about {
+                flex-direction: column;
+                max-width: 90%;
+            }
+
+            .about-section, .skills-section {
+                margin-top: 30px;
+                padding: 10px;
+            }
+
+            .about-img {
+                width: 150px;
+                height: 150px;
+                margin-bottom: 20px;
+            }
+
+            .about-info {
+                text-align: center;
+            }
+
+            .skills-container {
+                display: block;
+                text-align: center;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                padding: 0;
+                gap: 15px;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            nav .hamburger {
+                display: block;
+                cursor: pointer;
+                font-size: 30px;
+            }
+
+            nav .hamburger div {
+                width: 30px;
+                height: 4px;
+                background-color: white;
+                margin: 6px 0;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .name {
+                max-width: 90%;
+                margin-left: 3px;
+                margin-top: 20px;
+            }
+
+            .skill1 {
+                flex-direction: column;
+            }
+
+            .skill1 > div > div {
+                width: 250px;
+            }
+
+            .progress-bar {
+                height: 10px;
+                background-color: lightgreen;
+                animation: progress 4.5s;
+            }
+
+            .css-bar {
+                width: 90%;
+            }
+
+            .java-bar {
+                width: 60%;
+            }
+
+            .react-bar {
+                width: 50%;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                padding: 0;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .typetext {
+                font-size: 24px;
+            }
+
+            .about-section, .skills-section {
+                margin-top: 30px;
+                padding: 10px;
+            }
+
+            footer {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color: black; color: white;">
+    <nav style="display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 130px;">
+            <h1 style="font-size: 25px; font-family: 'Montserrat';">Marvellous</h1>
+            <div class="hamburger" onclick="toggleMenu()">
+                <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 7L7 7M20 7L11 7" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> <path d="M20 17H17M4 17L13 17" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> <path d="M4 12H7L20 12" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+            </div>
+        </div>
+        <ul id="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a target="_blank" href="https://drive.google.com/file/d/1Lr0zzC3XsXMxTwkugNfOgbAH01LYOmYW/view?usp=sharing">Resume</a></li>
+            <li><a href="project.html">Project</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section style="display: flex; justify-content: space-between; margin: auto; background-image: url(code-background.jpg); background-position: center; background-repeat: no-repeat; background-size: cover; width: 98vw; height: 100vh;">
+        <div class="name">
+            <h1 style="font-size: 40px; padding-top: 60px;">OLADIMEJI MARVELLOUS</h1>
+            <br>
+            <div style="display: flex; flex-direction: row; align-items: center; gap: 10px; font-size: 30px;">
+                <p style="max-width: max-content;">I'm a</p>
+                <p class="typetext" style="max-width: max-content; font-size: 30px;">Developer</p>
+            </div>
+            <div style="display: flex; gap: 20px; margin: 20px;">
+                <a href="https://github.com/oladimeji321">
+                    <svg fill="#ffffff" width="30px" height="30px" viewBox="0 0 32 32" id="icon" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill-rule:evenodd;}.cls-2{fill:none;}</style></defs><title>logo--github</title><path class="cls-1" d="M16,2a14,14,0,0,0-4.43,27.28c.7.13,1-.3,1-.67s0-1.21,0-2.38c-3.89.84-4.71-1.88-4.71-1.88A3.71,3.71,0,0,0,6.24,22.3c-1.27-.86.1-.85.1-.85A2.94,2.94,0,0,1,8.48,22.9a3,3,0,0,0,4.08,1.16,2.93,2.93,0,0,1,.88-1.87c-3.1-.36-6.37-1.56-6.37-6.92a5.4,5.4,0,0,1,1.44-3.76,5,5,0,0,1,.14-3.7s1.17-.38,3.85,1.43a13.3,13.3,0,0,1,7,0c2.67-1.81,3.84-1.43,3.84-1.43a5,5,0,0,1,.14,3.7,5.4,5.4,0,0,1,1.44,3.76c0,5.38-3.27,6.56-6.39,6.91a3.33,3.33,0,0,1,.95,2.59c0,1.87,0,3.38,0,3.84s.25.81,1,.67A14,14,0,0,0,16,2Z"></path><rect id="_Transparent_Rectangle_" data-name="<Transparent Rectangle>" class="cls-2" width="32" height="32"></rect></g></svg>
+                </a>
+                <a href="https://x.com/lonearmy11?s=21">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="30px" height="30px" viewBox="0 0 256 256" xml:space="preserve">
+
+                        <defs>
+                        </defs>
+                        <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(35.06303501945524 45.024124513618645) scale(1.83 1.83)" >
+                            <path d="M 0.219 2.882 l 34.748 46.461 L 0 87.118 h 7.87 l 30.614 -33.073 l 24.735 33.073 H 90 L 53.297 38.043 L 85.844 2.882 h -7.87 L 49.781 33.341 L 27.001 2.882 H 0.219 z M 11.793 8.679 h 12.303 L 78.425 81.32 H 66.122 L 11.793 8.679 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(228,228,228); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                        </g>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/lonearmy6?igsh=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr">
+                    <svg width="30px" height="30px" viewBox="0 0 32 32" id="Camada_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#121212;} </style> <path d="M6,2h20c2.2,0,4,1.8,4,4v20c0,2.2-1.8,4-4,4H6c-2.2,0-4-1.8-4-4V6C2,3.8,3.8,2,6,2z"></path> <g> <path class="st0" d="M21.3,9.7c-0.6,0-1.2,0.5-1.2,1.2c0,0.7,0.5,1.2,1.2,1.2c0.7,0,1.2-0.5,1.2-1.2C22.4,10.2,21.9,9.7,21.3,9.7z"></path> <path class="st0" d="M16,11.2c-2.7,0-4.9,2.2-4.9,4.9c0,2.7,2.2,4.9,4.9,4.9s4.9-2.2,4.9-4.9C21,13.4,18.8,11.2,16,11.2z M16,19.3 c-1.7,0-3.2-1.4-3.2-3.2c0-1.7,1.4-3.2,3.2-3.2c1.7,0,3.2,1.4,3.2,3.2C19.2,17.9,17.8,19.3,16,19.3z"></path> <path class="st0" d="M20,6h-8c-3.3,0-6,2.7-6,6v8c0,3.3,2.7,6,6,6h8c3.3,0,6-2.7,6-6v-8C26,8.7,23.3,6,20,6z M24.1,20 c0,2.3-1.9,4.1-4.1,4.1h-8c-2.3,0-4.1-1.9-4.1-4.1v-8c0-2.3,1.9-4.1,4.1-4.1h8c2.3,0,4.1,1.9,4.1,4.1V20z"></path> </g> </g></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" style="display: flex;margin: auto; gap:150px; margin-top: 70px; margin-bottom: 60px;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+         <h1>ABOUT ME</h1>
+         <img style="width: 225px; height: 200px; border-radius: 50%;" src="img-code.jpg" alt="" srcset="">
+        </div>
+         <div style="font-family: 'Montserrat';">
+             <h1>Hi, I'm Oladimeji Marvellous</h1>
+             <br>
+             <p>A Creative Developer, Turning ideas into Digital Reality.</p>
+             <br>
+             <br>
+             <div style="display: flex; align-items: center;">
+                 <a href="project.html">Explore my work</a>
+                 <svg width="30px" height="30px" viewBox="0 0 512 512" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#ffffff;} </style> <g id="Layer_1"></g> <g id="Layer_2"> <g> <path class="st0" d="M295,382.12c3.12,3.12,7.22,4.69,11.31,4.69s8.19-1.56,11.31-4.69l114.81-114.81c0.7-0.7,1.32-1.46,1.86-2.25 c0.03-0.04,0.07-0.09,0.1-0.13c0.24-0.35,0.45-0.72,0.66-1.09c0.05-0.09,0.1-0.17,0.15-0.26c0.19-0.35,0.35-0.7,0.51-1.06 c0.05-0.12,0.12-0.24,0.17-0.36c0.14-0.34,0.26-0.69,0.38-1.03c0.05-0.15,0.11-0.3,0.16-0.45c0.11-0.35,0.19-0.7,0.27-1.06 c0.04-0.16,0.08-0.31,0.11-0.47c0.08-0.42,0.14-0.84,0.19-1.26c0.01-0.1,0.03-0.2,0.04-0.3c0.11-1.07,0.11-2.14,0-3.21 c-0.02-0.17-0.05-0.34-0.07-0.52c-0.05-0.34-0.09-0.69-0.16-1.02c-0.05-0.24-0.12-0.48-0.17-0.72c-0.07-0.27-0.12-0.53-0.2-0.8 c-0.08-0.25-0.17-0.5-0.26-0.74c-0.09-0.24-0.17-0.49-0.27-0.73c-0.1-0.25-0.22-0.49-0.34-0.73c-0.11-0.23-0.21-0.46-0.33-0.69 c-0.13-0.25-0.29-0.49-0.43-0.74c-0.12-0.2-0.23-0.4-0.37-0.6c-0.2-0.3-0.42-0.59-0.65-0.88c-0.1-0.12-0.18-0.25-0.28-0.37 c-0.35-0.43-0.72-0.84-1.12-1.23L317.63,129.88c-6.25-6.25-16.38-6.25-22.63,0c-6.25,6.25-6.25,16.38,0,22.63l87.49,87.49H90.88 c-8.84,0-16,7.16-16,16s7.16,16,16,16H382.5L295,359.5C288.75,365.74,288.75,375.88,295,382.12z"></path> </g> </g> </g></svg>
+             </div>
+             <br>
+             <br>
+             <p>I'm passionate and versatile web developer with a love for building clean, responsive, and user-friendly websites and applications. I specialize in creating seamless digital experiences that blend both form and function.</p>
+             <br>
+             <p>My expertise spans front-end technologies like HTML, CSS, JavaScript, and frameworks like React. I’m always learning and keeping up-to-date with the latest trends and best practices in web development, ensuring that every project I take on is both innovative and efficient.</p>
+             <br>
+             <p>Whether I’m working on a sleek website for a local business or a complex web application for a startup, I’m driven by a desire to deliver solutions that solve real-world problems. I’m passionate about writing clean, maintainable code, and I enjoy collaborating with designers, product teams, and clients to bring ideas to life.</p>
+             <br>
+             <p>Feel free to reach out and let's create something amazing 😊!</p>
+     </section>
+
+    <section style="max-width: 70%; margin: auto; margin-bottom: 50px; font-family: 'Montserrat';">
+        <p style="font-size: 40px; font-family: 'Montserrat'; margin-bottom: 30px;">MY SKILLS</p>
+        <div class="skill1" style="display: flex; justify-content: space-between;">
+            <div>
+                <div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                        <p>HTML</p>
+                        <p>100%</p>
+                    </div>
+                    <div class="progress-bar"></div>
+                </div>
+                <div style="margin-top: 30px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                        <p>CSS</p>
+                        <p>90%</p>
+                    </div>
+                    <div class="css-bar"></div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                        <p>JavaScript</p>
+                        <p>60%</p>
+                    </div>
+                    <div class="java-bar"></div>
+                </div>
+                <div style="margin-top:30px ;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                        <p>React</p>
+                        <p>50%</p>
+                    </div>
+                    <div class="react-bar"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+    <footer style="margin-top: 20px; margin-bottom: 20px; font-family: 'Montserrat'; text-align: center;">
+        &copy; 2024 | ❤️ Oladimeji Marvellous
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('nav-links');
+            menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+        }
+    </script>
+</body>
+</html>
